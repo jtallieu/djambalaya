@@ -6,8 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-website/src/AdminLTE
-website/src/Adminator*
 # Distribution / packaging
 .Python
 build/
