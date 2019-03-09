@@ -1,4 +1,3 @@
-adminator
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -7,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+website/src/AdminLTE
+website/src/Adminator*
 # Distribution / packaging
 .Python
 build/
