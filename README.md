@@ -1,0 +1,2 @@
+# djambalaya
+Personal Django Playspace
