@@ -1,0 +1,32 @@
+version: '2'
+services:
+    webapp:
+        build: .
+        command: ./run.sh
+        environment:
+            - PYTHONPATH=/usr/src/app
+            - PG_PASSWORD=something
+            - PG_HOST=postgres
+            - PG_USER=webservice
+            - PG_DBNAME=stefani
+        volumes:
+            - ./webapp:/usr/src/app
+            - ./website:/usr/src/website
+        ports:
+            - "80:8080"
+        links:
+            - postgres
+
+    postgres:
+        image: postgres:10.3
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=something
+          - POSTGRES_DB=stefani
+          - PGDATA=/var/lib/postgresql/data/pgdata
+          - SERVICE_USER_NAME=webservice
+          - SERVICE_USER_PASS=something
+          - MIGRATIONS_USER_NAME=admin
+          - MIGRATIONS_USER_PASS=something
+        ports:
+          - "5434:5432"
