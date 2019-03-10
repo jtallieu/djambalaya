@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from views import index_view
+from views import index_view, show_content
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^api/v2/hollabacks/', include('stefani.urls')),
     url(r'^adminator$', RedirectView.as_view(url='/static/Adminator-admin-dashboard/build/index.html', permanent=False)),
     url(r'^adminLTE$', RedirectView.as_view(url='/static/AdminLTE/index.html', permanent=False)),
-    url(r'^$', RedirectView.as_view(url='/static/AdminLTE/index.html', permanent=False))
+    url(r'^djamba/(?P<content_path>.+?)$', show_content),
+    url(r'^$', index_view)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
