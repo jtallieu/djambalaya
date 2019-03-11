@@ -31,10 +31,13 @@ def _left_menu():
                 url="/djamba/uicomponent/timeline"),
         ]) 
 
-    solutions = dict(
-        name="Solutions",
-        icon_classes="fa fa-lightbulb-o",
-        desc='Typically items in this area will demonstrate a specific solution and may or may not involve any custom components.',
+    pages = dict(
+        name="Pages",
+        icon_classes="fa fa-clone",
+        desc=("Static pages that demonstrate UI component layout.  The pages "
+              "in this section have no backend support, so you might consider "
+              "these a richer version of wire-frames.  For a collection of pages "
+              "with backend support, checkout Workflows"),
         url="#",
         items=[
             dict(
@@ -56,6 +59,16 @@ def _left_menu():
                 disabled=True,
                 url="/djamba/solutions/user_permissions")
         ])
+
+    workflows = dict(
+        name="Workflows",
+        icon_classes="fa fa-recycle",
+        desc=("Generally, each item in this section will launch you into a specific workflow. "
+              "A workflow is a collection of page transitions and functionality that provide a "
+              "larger solution.  For example, editing a user or viewing a profile might start "
+              "with finding a user and that entire experience and how it flows together."),
+        url="#",
+        items=[])
 
     apps = dict(
         name="Apps and Integrations",
@@ -117,4 +130,4 @@ def _left_menu():
                 disabled=True,
                 url="/djamba/solutions/user_permissions")
         ])
-    return [components, solutions, dashboards, apps]
+    return [components, pages, workflows, dashboards, apps]
