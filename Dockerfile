@@ -29,6 +29,7 @@ RUN set -ex \
             nodejs-npm \
             git openssh
 
+RUN npm install -g grunt-cli
 RUN apk update && \
     apk add --virtual build-deps gcc python-dev musl-dev && \
     apk add postgresql-dev
@@ -51,5 +52,6 @@ WORKDIR /usr/src/app
 
 ENV PYTHONPATH=.
 COPY webapp .
+COPY website /usr/src/website
 
 CMD ["./run.sh"]
