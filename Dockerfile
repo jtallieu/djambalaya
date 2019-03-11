@@ -29,19 +29,9 @@ RUN set -ex \
             nodejs-npm \
             git openssh
 
-RUN npm install -g grunt-cli
 RUN apk update && \
     apk add --virtual build-deps gcc python-dev musl-dev && \
     apk add postgresql-dev
-
-WORKDIR /tmp
-RUN wget https://pypi.python.org/packages/82/6c/1b3f7ca755787e934513039131091134038239f167e1bc50565cb46112a0/librabbitmq-1.6.1.tar.gz && \
-      tar xzf librabbitmq-1.6.1.tar.gz && \
-      cd librabbitmq-1.6.1/clib && \
-      ./configure && \
-      make && \
-      cd ../ && python setup.py install && \
-      rm -rf /tmp/librabbitmq-1.6.1.tar.gz /tmp/librabbitmq-1.6.1/
 
 RUN pip install --upgrade pip
 RUN pip install -r /requirements.txt
@@ -54,4 +44,5 @@ ENV PYTHONPATH=.
 COPY webapp .
 COPY website /usr/src/website
 
+RUN npm install -g grunt-cli
 CMD ["./run.sh"]

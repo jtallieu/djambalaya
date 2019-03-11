@@ -25,7 +25,11 @@ def _left_menu():
                 name="Live Background",
                 icon_classes="fa fa-barcode",
                 url="/djamba/uicomponent/stats_as_background"),
-        ])
+            dict(
+                name="Timeline",
+                icon_classes="fa fa-sort-amount-desc",
+                url="/djamba/uicomponent/timeline"),
+        ]) 
 
     solutions = dict(
         name="Solutions",
@@ -34,9 +38,9 @@ def _left_menu():
         url="#",
         items=[
             dict(
-                name="AuditLog Timeline",
-                icon_classes="fa fa-sort-amount-desc",
-                url="/djamba/solutions/alog_timeline"),
+                name="User Profile Page",
+                icon_classes="fa fa-user",
+                url="/djamba/solutions/user_profile"),
             dict(
                 name="Device Manager",
                 icon_classes="fa fa-wrench",

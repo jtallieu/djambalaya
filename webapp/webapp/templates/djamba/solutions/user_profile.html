@@ -1,0 +1,232 @@
+{% extends 'djamba/base.html' %}
+{% load static %}
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      
+    </section>
+
+    
+
+          <!-- Main content -->
+    <section class="content fluid-container">
+      <div class="row">
+        <div class="col-lg-8">
+         <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-navy">
+              <div class="widget-user-image">
+                <img class="img-circle" src="{% static 'AdminLTE/dist/img/user7-128x128.jpg' %}" alt="User Avatar">
+              </div>
+              <!-- /.widget-user-image -->
+              <h3 class="widget-user-username">Nadia Carmichael <span class="pull-right badge bg-green">Active</span></h3>
+              <h5 class="widget-user-desc">Sales Support</h5>
+              <h5 class="widget-user-desc">ADT</h5>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Cameras <span class="pull-right badge bg-aqua">31</span></a></li>
+                <li><a href="#">Layouts <span class="pull-right badge bg-aqua">5</span></a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <!-- /.widget-user -->
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <i class="fa fa-unlock-alt"></i>
+
+              <h3 class="box-title">Permissions</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <dl class="dl-horizontal">
+                <dt>Administrator</dt>
+                <dd>Has access to everythin</dd>
+                <dt>Add Cameras</dt>
+                <dd>Can add cameras only and modify settings</dd>
+                <dt>Edit Camera Settings</dt>
+                <dd>Can edit camera settings, but cannot change settings that affect billing</dd>
+                <dt>Full Camera Edit</dt>
+                <dd>Can edit all camera settings including billable settings</dd>
+                <dt>Add User</dt>
+                <dd>Can add users</dd>
+                
+              </dl>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <button type="button" class="btn btn-block btn-danger btn-flat">Disable User</button>
+          <!-- /.box -->
+        </div>
+        <div class="col-lg-4">
+          <!-- row -->
+          <section class="content container">
+          <div class="row justify-content-md-center">
+            <div class="col-md-4">
+              <!-- The time line -->
+              <ul class="timeline">
+                <!-- timeline time label -->
+                <li class="time-label">
+                      <span class="bg-gray">
+                        12 Feb. 2019
+                      </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                  <i class="fa fa-play bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+                    <h3 class="timeline-header no-border"><a href="#">Nadia Carmichael</a> viewed <a href="#">Office</a> camera</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user-plus bg-red"></i>
+                  <div class="timeline-item panel panel-danger">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:30</span>
+                    <h3 class="timeline-header no-border"><a href="#">Nadia Carmichael</a> added user <a href="#">Dolly Rotts</a></h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-power-off bg-yellow"></i>
+                  <div class="timeline-item panel panel-warning">
+                    <span class="time"><i class="fa fa-clock-o"></i> 23:30</span>
+                    <h3 class="timeline-header no-border"><a href="#">Nadia Carmichael</a> turned off <a href="#">ATM Camera</a></h3>
+                  </div>
+                </li>
+
+                <!-- END timeline item -->
+                <!-- timeline time label -->
+                <li class="time-label">
+                      <span class="bg-gray">
+                        11 Feb 2019
+                      </span>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-object-ungroup bg-yellow"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header panel panel-warning"><a href="#">Nadia Carmichael</a> updated the motion region on <a href="#">Parking Lot</a> camera</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                
+
+
+                <!-- END timeline item -->
+                <!-- timeline time label -->
+                <li class="time-label">
+                      <span class="bg-gray">
+                        10 Feb 2019
+                      </span>
+                </li>
+                <li>
+                  <i class="fa fa-exclamation bg-red"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header panel panel-warning"><a href="#">Nadia Carmichael</a> deleted <a href="#">Lobby 2</a> camera</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-exclamation bg-red"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header panel panel-warning"><a href="#">Nadia Carmichael</a> deleted <a href="#">Lobby 3</a> camera</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-exclamation bg-red"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header panel panel-warning"><a href="#">Nadia Carmichael</a> deleted <a href="#">Lobby</a> camera</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-user bg-aqua"></i>
+                  <div class="timeline-item">
+                    <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                    <h3 class="timeline-header"><a href="#">Nadia Carmichael</a> logged in from 192.50.4.23</h3>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+            <!-- /.col  Timeline -->
+          </div>
+          <!-- /.row -->
+        </section>
+      </div>
+    </div>
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+{% endblock %}
