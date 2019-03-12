@@ -22,6 +22,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^videobank', include('videobank.urls')),
     url(r'^api/v2/hollabacks/', include('stefani.urls')),
     url(r'^adminator$', RedirectView.as_view(url='/static/Adminator-admin-dashboard/build/index.html', permanent=False)),
     url(r'^adminLTE$', RedirectView.as_view(url='/static/AdminLTE/index.html', permanent=False)),

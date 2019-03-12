@@ -1,3 +1,7 @@
+import logging
+
+log = logging.getLogger(__name__)
+
 
 def gui_config(request):
     return dict(
@@ -6,11 +10,12 @@ def gui_config(request):
         SKIN="skin-blue",
         MAIN_NAV_STYLE="sidebar-mini",
         FAVICON="djam/design.ico",
-        LEFT_NAV=_left_menu()
+        LEFT_NAV=_left_menu(request)
     )
 
 
-def _left_menu():
+def _left_menu(request):
+    log.info("Handling request {} {}".format(request, request.path_info))
     components = dict(
         name="Components",
         desc='Collection of UI elements and components.',
@@ -130,4 +135,15 @@ def _left_menu():
                 disabled=True,
                 url="/djamba/solutions/user_permissions")
         ])
-    return [components, pages, workflows, dashboards, apps]
+
+    menu = [components, pages, workflows, dashboards, apps]
+    for m in menu:
+        if m['url'] == request.path_info:
+            m['active'] = True
+            break
+        for mm in m.get('items', []):
+            if mm['url'] == request.path_info:
+                mm['active'] = True
+                m['active'] = True
+                break
+    return menu
