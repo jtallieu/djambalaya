@@ -1,0 +1,51 @@
+{% extends './base.html' %}
+
+{% block content %}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Videobank</h1>
+          <p class="lead">Welcome</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container">
+      {% for menu in LEFT_NAV %}
+        <div class="row justify-content-md-center">
+          <div class="col-lg-12 col-xs-12">
+            <!-- small box -->
+
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>{{menu.name}}</h3>
+                <p>{{menu.desc}}</p>
+              </div>
+              <div class="icon">
+                <i class="{{menu.icon_classes}}"></i>
+              </div>
+              <div class="box-footer no-padding">
+                  <ul class="nav nav-stacked">
+                    {% for sub in menu.items %}
+                    <li {% if sub.disabled %}class="disabled"{% endif %}>
+                      <a href="{{sub.url}}">
+                        <i class="{{sub.icon_classes}}"></i>
+                        <span>{{sub.name}}</span></a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      
+
+
+    </section>
+    <!-- /.content -->
+  </div>
+{% endblock %}

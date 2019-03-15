@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'django_celery_results',
     'stefani',
+    'videobank.apps.Config'
 ]
 
 REST_FRAMEWORK = {
@@ -74,7 +75,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'webapp/templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'webapp/templates'),
+            os.path.join(BASE_DIR, 'videobank/templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +86,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'webapp.app_info.gui_config'
+                'webapp.app_info.gui_config',
+                'videobank.app_info.gui_config'
             ],
         },
     },
