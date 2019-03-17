@@ -3,7 +3,9 @@
 
 {% block head %}
 {{ block.super }}
+<link rel="stylesheet" href="{% static 'AdminLTE'%}/plugins/bootstrap-slider/slider.css">
 <link rel="stylesheet" href="{% static 'djam/bg_pulse/style.css' %}">
+
 {% endblock %}
 
 {% block content %}
@@ -20,22 +22,81 @@
     <section class="content container-fluid">
 
       <div class="row">
-        <div class="col-lg-6">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Simple Background</h3>
-              <p>Gradient is based on time series data</p>
+        <div class="col-md-4">
+          <div class="box box-solid livebg">
+
+            <div class="box-header">
+              <h3 class="box-title">Front Entrance</h3>
+              <p>GM Building - Detroit, MI</p>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body demo">
-              <canvas class="bg-pulse">
-              </canvas>
+            <div class="box-body " style="height:6px; padding: 0px">
+
             </div>
-            <!-- /.box-body -->
           </div>
         </div>
+       
+
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box box-solid">
+
+            <div class="box-header">
+              <h3 class="box-title">Lobby Camera</h3>
+              <p>123 West Raymon St - Austin, TX 78750</p>
+            </div>
+            <div class="box-body livebg2" style="height:6px; padding: 0px">
+
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box box-solid">
+
+            <div class="box-header">
+              <h3 class="box-title">West Lot</h3>
+              <p>1549 Flamingor Dr, New Orleans LA</p>
+            </div>
+            <div class="box-body livebg2" style="height:6px; padding: 0px">
+
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box box-solid">
+
+            <div class="box-header">
+              <h3 class="box-title">Waiting Room</h3>
+              <p>123 West Raymon St - Austin, TX 78750</p>
+            </div>
+            <div class="box-body livebg2" style="height:6px; padding: 0px">
+
+            </div>
+          </div>
+        </div>
+        
       </div>
 
+      <div class="row">
+        <div class="col-md-2">
+          <div class="box box-primary">
+            <div class="box-header">
+              <h3 class="box-title">Adjust the load</h3>
+            </div>
+            <div class="box-body">
+              <input type="text" value="" class="slider form-control" data-slider-min="0" data-slider-max="100"
+                                 data-slider-step="-1" data-slider-reversed="true" data-slider-value="[0,80]" data-slider-orientation="vertical"
+                                 data-slider-selection="before" data-slider-tooltip="show" data-slider-id="red">
+            </div>
+          </div>  
+        </div>
+      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -43,5 +104,52 @@
 
 {% block scripts %}
 {{ block.super }}
+<script src="{% static 'AdminLTE'%}/plugins/bootstrap-slider/bootstrap-slider.js"></script>
 <script src="{% static 'djam/bg_pulse/widget.js' %}"></script>
+
+<script>
+  $(function () {
+    /* BOOTSTRAP SLIDER */
+    window.bslisder = $('.slider').bootstrapSlider();
+    console.log("bslider = ", window.bslider);
+    var data = [];
+    for (var i=0; i <= 102; i++){
+      if ((i>20 && i<65) || i > 90){
+        data.push(Math.floor(Math.random() * 10))
+      } else {
+        data.push(Math.floor(Math.random() * 101))
+      }
+    }
+    var lbg = $(".livebg").livebg({
+      data: data,
+      bg_color: "007399",
+      slots: 100,
+      max: 150,
+      frequency: 4000,
+    });
+
+    data = [];
+    for (var i=0; i <= 102; i++){
+      data.push(Math.floor(Math.random() * 60))
+    }
+    var lbg2 = $(".livebg2").livebg({
+      data: data,
+      bg_color: "007399",
+      slots: 100,
+      max: 100,
+      frequency: 4000,
+    });
+      
+      setInterval(function(){
+        var range = window.bslisder.bootstrapSlider('getValue');
+        var load = Math.round(Math.random() * (range[1] - range[0]) + range[0]);
+        lbg.livebg("update", load);
+
+        load = Math.round(Math.random() * (range[1] - range[0]) + range[0]);
+        lbg2.livebg("update", load);
+        //$(".bg-pulse").livebg("update", Math.floor(30));
+      }, 4000)
+    });
+</script>
+
 {% endblock %}

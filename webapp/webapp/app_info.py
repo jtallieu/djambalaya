@@ -27,9 +27,13 @@ def _left_menu(request):
                 icon_classes="fa fa-video-camera",
                 url="/djamba/uicomponent/preview_panes"),
             dict(
-                name="Live Background",
+                name="Live Background Sparks",
                 icon_classes="fa fa-barcode",
                 url="/djamba/uicomponent/stats_as_background"),
+            dict(
+                name="Live Background FULL",
+                icon_classes="fa fa-barcode",
+                url="/djamba/uicomponent/live_background2"),
             dict(
                 name="Timeline",
                 icon_classes="fa fa-sort-amount-desc",
